@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box{
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px -15px rgba(0, 0, 0, 0.4);
+}
+body{
+  background-color: white;
+  background-image: linear-gradient(30deg, #A683E3 50%, #E4E9FD 50%);
+  min-height: 1000px;
+  font-family: 'helvetica neue', sans-serif;
+}
+.date, .listName{
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  text-align: center;
+  background-color: #A683E3;
+  border-radius: 20px;
+}
+
+.item{
+  padding: 1.5rem;
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  border-bottom: 1px solid rgb(194, 186, 186);
+}
+.item:last-child{
+  border-bottom: 0px;
+}
+.item p{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: rgb(41, 41, 41);
+  width: 280px;
+}
+
+input[type="checkbox"]{
+  margin-right: 30px;
+}
+
+input[type="text"]{
+  text-align: center;
+  height: 2.6rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 340px;
+  padding: 20px 40px;
+  margin: auto;
+  font-size:1rem;
+  font-weight: 200;
+}
+
+.add{
+  border: none;
+  background-color: #A683E3;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  border-radius: 100%;
+  cursor: pointer;
+  color: white;
+  float: right;
+  margin-right: 20px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: #827896;
+  text-decoration-thickness: 1px;
+}
+
+input[type="checkbox"] {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.delete{
+  margin-left: .3rem;
+  color: #2c2b2e;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

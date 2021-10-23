@@ -1,0 +1,9 @@
+#ignore node_modules folder
+/node_modules 
+npm-debug.log
+
+#ignore system files
+.DS_Store
+
+#ignore files related to api keys
+/*.env

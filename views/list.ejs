@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <title>TO DO LISTS</title>
+</head>
+<body>
+  <div class="box" id="heading">
+    <h1 class="date"> <%= listTitle %> </h1> <!--Info from js file-->
+  </div>
+
+  <div class="box">
+
+
+  <%  newListItems.forEach(function(item){ %>
+
+    <form action="/delete" method="post" class="itemRemoval"> <!--form for submiting delete inputs-->
+      <div class="item">
+        <input type="checkbox">
+          <p> <%= item.name %> </p> <!-- .name will enable us to tap into the name field -->
+         <button class="delete" type="submit" name="del" value="<%= item._id %>">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <!--to get the custom list without entering any value-->
+      <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+    </form>
+  <%  }) %>
+
+
+      <form class="item" action="/" method="post"> <!--Form for submiting new items-->
+        <input type="text" name="newItem" placeholder="Add new item" autocomplete="off" required>
+        <button type="submit" name="list" value="<%= listTitle %>" class="add">+</button>
+      </form>
+  </div>
+
+   
+  <script>
+    const box = document.querySelector(".box");
+
+    window.addEventListener("scroll", function(){
+      let scrollPosition = window.pageYOffset;
+      box.style.transform = 'translateY(' +scrollPosition*-.4 + 'px)';
+    });
+  </script>
+</body>
+</html>

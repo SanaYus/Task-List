@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //create connection to database
-mongoose.connect("mongodb+srv://Admin-Sana:sanayb11@cluster0.umdpc.mongodb.net/todolistDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.URL,
+  {useNewUrlParser: true,
+   useUnifiedTopology: true});
+
 
 //create a schema for original list
 const itemsSchema = {
